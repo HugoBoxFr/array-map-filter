@@ -42,8 +42,36 @@ En sortie: [
 
  */
 
+const foods =   [
+  {
+    food: 'Bacon',
+    isVegetarian: false
+  },
+  {
+    food: 'Sausage',
+    isVegetarian: false
+  },
+  {
+    food: 'Tofu',
+    isVegetarian: true
+  },
+  {
+    food: 'Chick Pea',
+    isVegetarian: true
+  }
+]
+
 function getFoodCategories(foods) {
+  return foods.map(elt => {
+    if (elt.isVegetarian === true) {
+      return `${elt.food} is suitable for vegetarians`;
+    } else if (elt.isVegetarian === false) {
+      return `${elt.food} is not suitable for vegetarians`;
+    }
+  })
 }
+
+console.log(getFoodCategories(foods));
 
 
 
